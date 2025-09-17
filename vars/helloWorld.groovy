@@ -1,3 +1,3 @@
 def call() {
-  bat 'echo Hi From DevOps Team'
+  bat 'echo practising on jenkins shared library concept'
 }
