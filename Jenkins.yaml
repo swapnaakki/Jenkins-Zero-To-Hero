@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Print Environment Variables') {
+            steps {
+                echo "Printing all environment variables:"
+                // sh 'printenv'   // for Linux/Unix agents
+                bat 'set'   // use this instead if your Jenkins runs on Windows
+            }
+        }
+    }
+}
+
