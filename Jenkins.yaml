@@ -1,3 +1,18 @@
+def sharedlibrary
+try {
+    sharedlibrary = scm.branches[0].name
+    if (sharedlibrary.contains("*/")) {
+        sharedlibrary = sharedlibrary.split("\\*/")[1]
+    }
+    else{
+        sharedlibrary = "master"
+        println("Unable to fetch scm branch,so using default branch i.e master")
+}}
+catch (e) {
+    println("Error in fetching branch")
+}
+
+
 pipeline {
     agent any
 
