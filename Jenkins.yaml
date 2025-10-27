@@ -15,7 +15,6 @@ catch (e) {
 node {
   cleanWs()
   @Library("jenkins-library") _
-  checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: "*/${sharedlibrary}"]], extensions: [[$class: 'CloneOption', honorRefspec: true, noTags: true, reference: '', shallow: true]], userRemoteConfigs: [[credentialsId: 'Jenkinscodemanager-bitbucket',refspec: "+refs/heads/${sharedlibrary}:refs/remotes/origin/${sharedlibrary}", url: ""]]]
   def url = "${WORKSPACE}"
   def urlsplitted = url.split('/')
   projectName = urlsplitted[urlsplitted.length - 3]
